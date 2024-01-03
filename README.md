@@ -1,5 +1,7 @@
 # Tip-Calculator
 
+<p>
+ 
 ## TextField
 텍스트 입력을 위한 구성요소이다. 텍스트 박스의 기본값은 **value**, 입력값을 변경하면 불리는 람다 콜백은 **onValueChange**이다. 
 
@@ -19,6 +21,16 @@ Compose에선 두 유형을 사용하여 앱의 상태를 관찰하거나 추적
 ```
 var amountInput:MutableState<String> = mutableStateOf("0")
 ```
-> 리컴포지션 시 변경된 변수 값을 보존하는 방법을 적용해야 한다. 위 코드의 경우 Compose에 의해 amountInput 상태가 추척되어 값이 변경되는 즉시 리컴포지션이 예약되지만 변수가 계속 초기 0으로 설정된다.
+> 리컴포지션 시 변경된 변수 값을 보존할 수 있어 한다. 위 코드의 경우 Compose에 의해 amountInput 상태가 추척되어 값이 변경되는 즉시 리컴포지션이 예약되지만 변수가 계속 초기 0으로 설정된다.
+<br>
+<br>
 
+### remember
+Composable 함수에선 **remember**를 사용하여 리컴포지션에서 객체를 저장할 수 있다.    재구성된 상태를 기억하는 함수인 것이다.
+
+일반적으로 remember와 mutableStateOf 함수가 같이 사용된다.
+```
+var amountInput by remember { mutableStateOf("") }
+```
+</p>
 
