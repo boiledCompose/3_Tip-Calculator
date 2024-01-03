@@ -1,5 +1,10 @@
 # Tip-Calculator
 
+## TextField
+텍스트 입력을 위한 구성요소이다. 텍스트 박스의 기본값은 **value**, 입력값을 변경하면 불리는 람다 콜백은 **onValueChange**이다. 
+
+텍스트 입력 시 UI를 수정하기 위해선 Compose의 상태, 컴포지션에 대해 알아야 한다.
+
 ### Composition
 **컴포지션**은 Compose가 Composable을 실행할 때 빌드한 UI에 관한 설명이다. 앱이 실행되는 동안 또는 사용자가 앱과 상호작용할 때 UI를 변경하고자 한다면 **리컴포지션**이라는 프로세스를 사용하여 앱의 컴포지션을 업데이트한다.
 
@@ -14,3 +19,6 @@ Compose에선 두 유형을 사용하여 앱의 상태를 관찰하거나 추적
 ```
 var amountInput:MutableState<String> = mutableStateOf("0")
 ```
+> 리컴포지션 시 변경된 변수 값을 보존하는 방법을 적용해야 한다. 위 코드의 경우 Compose에 의해 amountInput 상태가 추척되어 값이 변경되는 즉시 리컴포지션이 예약되지만 변수가 계속 초기 0으로 설정된다.
+
+
