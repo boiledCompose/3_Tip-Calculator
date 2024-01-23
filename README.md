@@ -6,16 +6,19 @@
 
 ## 컴포지션
 **Composable**은 일부 텍스트, 공백, 텍스트 상자와 함께 열이 표시된 UI를 설명해주는 기능   
+
 **Compose**는 선언형 UI 프레임워크로, UI의 모습을 코드로 선언하는 것   
+
 **Composition**은 Compose가 Composable을 실행할 때 빌드한 UI에 관한 설명   
 
-1. Compose는 초기 composition 시 처음으로 composable을 실행할 때 composition에서 UI를 기술하기 위해 호출하는 composable을 추적한다.
+1. Compose는 초기 composition에서 처음으로 composable을 실행할 때 UI를 화면에 보여주기 위해 호출하는 composable을 추적한다.
 2. Compose는 데이터 변경사항에 따라 변경될 수 있는 composable을 다시 실행한 다음 변경사항을 반영하도록 Composition을 업데이트한다. 이 업데이트를 **Recomposition**이라고 한다.
+   
 > [!NOTE]
 > 컴포지션을 수정하는 유일한 방법은 리컴포지션을 통하는 것이다.
 <br>
 
-### State & MutableState
+## State & MutableState
 Compose에선 이 두 유형을 사용하여 앱의 상태를 관찰 가능하거나 추적 가능한 상태로 설정할 수 있다.
 - State 유형은 변경할 수 없어 그 유형의 값만 읽을 수 있다.
 - MutableState 유형은 변경이 가능하다.
@@ -47,7 +50,5 @@ var amountInput by remember { mutableStateOf("") }
 
 >[!TIP]
 > stateless로 변환할 composable에 선언된 변수들을 인자로 받도록 수정하는 것이 호이스팅이다! 이를 통해 stateless composable에서 변경되는 변수 값에 다른 composable이 접근할 수 있게 된다.
-
-
 
 </p>
